@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
-public class Ball: MonoBehaviour
+public class Ball: NetworkBehaviour
 {
     public Text Score0, Score1;
     public Rigidbody2D player0, player1;
@@ -78,7 +79,8 @@ public class Ball: MonoBehaviour
 
         if (other.gameObject.tag == "Player0")
         {
-            myDirection.x = Mathf.Abs(myDirection.x);
+            myDirection.x = -(myDirection.x);
+
             if (Skills_P0.sticky == false && Skills_P0.charge == false)
                 source.PlayOneShot(effect[0]);
             if (Skills_P0.sticky == true)

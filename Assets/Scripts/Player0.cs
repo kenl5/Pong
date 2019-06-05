@@ -56,7 +56,7 @@ public class Player0: MonoBehaviour
         {
             if (Skills_P0.boostCD == 0)
             {
-                icon[0].texture = image[3];
+               // icon[0].texture = image[3];
                 source.PlayOneShot(effect[0]);
                 Skills_P0.boostCD = 750;
                 Skills_P0.boostActived = 250;
@@ -69,7 +69,7 @@ public class Player0: MonoBehaviour
         {
             if (Skills_P0.stickyCD == 0)
             {
-                icon[1].texture = image[3];
+                //icon[1].texture = image[3];
                 rend.material = sticky;
                 source.PlayOneShot(effect[2]);
                 Skills_P0.stickyCD = 1500;
@@ -81,7 +81,7 @@ public class Player0: MonoBehaviour
         {
             if (Skills_P0.expandCD == 0)
             {
-                icon[2].texture = image[3];
+                //icon[2].texture = image[3];
                 source.PlayOneShot(effect[3]);
                 Skills_P0.expandCD = 2000;
                 Skills_P0.expandActived = 400;
