@@ -41,6 +41,10 @@ public class Player0: MonoBehaviour
             input += Vector2.up;
         if (Input.GetKey(KeyCode.S))
             input += Vector2.down;
+        if (Input.GetKey(KeyCode.A))
+            input += Vector2.left;
+        if (Input.GetKey(KeyCode.D))
+            input += Vector2.right;
         input.Normalize();
 
         Vector2 newPosition = myRigidbody.position + input * mySpeed * Time.deltaTime;
