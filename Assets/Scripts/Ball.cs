@@ -17,6 +17,8 @@ public class Ball: NetworkBehaviour
     private float mySpeed = 8.5f;
     private int score0 = 0, score1 = 0;
     private int countdown = 0;
+    private Transform ball;
+
 
 	private void Awake()
     {
@@ -28,6 +30,7 @@ public class Ball: NetworkBehaviour
 
     private void FixedUpdate()
     {
+        ball = GetComponent<Transform>();
         WinState();
 
         if (countdown == 0)
@@ -80,6 +83,7 @@ public class Ball: NetworkBehaviour
         if (other.gameObject.tag == "Player0")
         {
             myDirection.x = -(myDirection.x);
+            myDirection.y = Random.Range(-2f, 2);
 
             if (Skills_P0.sticky == false && Skills_P0.charge == false)
                 source.PlayOneShot(effect[0]);

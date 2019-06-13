@@ -13,7 +13,7 @@ public class Player0: MonoBehaviour
     private Rigidbody2D myRigidbody;
     private Renderer rend;
     private AudioSource source;
-    private float mySpeed = 3.5f, yMin = -4.05f, yMax = 4.05f;
+    private float mySpeed = 7f, yMin = -4.05f, yMax = 4.05f;
 
     private void Awake()
     {
@@ -48,7 +48,7 @@ public class Player0: MonoBehaviour
         input.Normalize();
 
         Vector2 newPosition = myRigidbody.position + input * mySpeed * Time.deltaTime;
-        newPosition = new Vector2(newPosition.x, Mathf.Clamp(newPosition.y, yMin, yMax));
+        newPosition = new Vector2(Mathf.Clamp(newPosition.x, -8.5f, 8.5f), Mathf.Clamp(newPosition.y, yMin, yMax));
 
         myRigidbody.MovePosition(newPosition);
     }
